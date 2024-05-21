@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		yYYUjDPoTxyiYDtCnauTynhJJsY=
+		Kclil13wE3870PblDJyFswTYV+U=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>Frameworks/GLTFSceneKit.framework/GLTFSceneKit</key>
 		<data>
-		sM+wFGiBsLAj4Hia+bvcw6GZO9w=
+		asDtZwlGOssyEsc1R/1VbmKvGt4=
 		</data>
 		<key>Frameworks/GLTFSceneKit.framework/GLTFShaderModifierFragment_alphaCutoff.shader</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>Frameworks/arkit_plugin.framework/arkit_plugin</key>
 		<data>
-		h37Neu4NXcJE4XijvVsRnsCFQQA=
+		YCms4h9eDuzH4di8DGeRTOf4FuM=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -325,7 +325,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TvatwK/ujuRNdRCt/1aRjGuB3TUcfkLnwGevbC77E6Q=
+			hxrr2OWg6NS6C24Til2hXYjg4h2Ic2OzYDvAY7HOr2w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -570,7 +570,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nNW/ZBhqzojx7aEM8XLkb0EaWkq4Qw3ymRL/j0xpmh8=
+			P+rJX++m00CYvrNIhXRGm74pwVJddYq4b5O6Sk64OFE=
 			</data>
 		</dict>
 		<key>Frameworks/GLTFSceneKit.framework/GLTFShaderModifierFragment_alphaCutoff.shader</key>
@@ -654,7 +654,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uVU98WdUzbm6bo5fmQmFOosNqzNg1AFSlFnmePAGttc=
+			OK0Ah25NYpMRVAd+1Cawz90qzpZ6BHEGNS7Czw5+8Xk=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
