@@ -1,0 +1,1 @@
+ /Users/brentvanmalsen/Desktop/arview/.dart_tool/flutter_build/5685e5460843ee2b0061fa74fcf0e8a3/native_assets.yaml: 
