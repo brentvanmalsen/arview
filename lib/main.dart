@@ -1,5 +1,6 @@
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
+import 'package:vector_math/vector_math_64.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,8 +67,14 @@ void arView(ARKitController controller) {
   final nodeAr = ARKitNode(
     geometry: ARKitSphere(
       materials: [
-        ARKitMaterial(),
+        ARKitMaterial(
+          diffuse: ARKitMaterialProperty.image("images/image.jpg"),
+          doubleSided: true,
+        ),
       ],
+      radius: 1
     ),
+    position: Vector3(0,0,0),
   );
+  controller.add(nodeAr);
 }
