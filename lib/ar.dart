@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:arkit_plugin/arkit_plugin.dart';
+import 'package:vector_math/vector_math_64.dart';
+
+class ARViewPage extends StatelessWidget {
+  const ARViewPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('AR View'),
+      ),
+      body: ARKitSceneView(
+        onARKitViewCreated: (controller) => _arView(controller),
+      ),
+    );
+  }
+
+  void _arView(ARKitController controller) {
+    final nodeAr = ARKitNode(
+      geometry: ARKitSphere(
+        materials: [
+          ARKitMaterial(
+            diffuse: ARKitMaterialProperty.image('images/image.jpg'),
+            doubleSided: true,
+          ),
+        ],
+        radius: 1,
+      ),
+      position: Vector3(0, 0, -1),
+    );
+
+    controller.add(nodeAr);
+  }
+}

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:arkit_plugin/arkit_plugin.dart';
-import 'package:vector_math/vector_math_64.dart';
+import 'ar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,42 +11,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter ARKit Bird',
-      home: const MyHomePage(),
+      title: 'Flutter ARKit Demo',
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ARKitSceneView(
-        onARKitViewCreated: (controller) => arView(controller),
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ARViewPage()),
+            );
+          },
+          child: const Text('Go to AR View'),
+        ),
       ),
     );
   }
-}
-
-void arView(ARKitController controller) {
-  final birdModelPath = "objects/bird.obj";
-
-  final nodeAr = ARKitNode(
-    geometry: ARKitReferenceNode(
-      url: birdModelPath,
-      scale: Vector3.all(0.1),
-    ),
-    position: Vector3(0, 0, -1),
-    eulerAngles: Vector3.zero(),
-  );
-
-  controller.add(nodeAr);
 }
