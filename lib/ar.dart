@@ -3,7 +3,9 @@ import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:vector_math/vector_math_64.dart';
 
 class ARViewPage extends StatelessWidget {
-  const ARViewPage({Key? key}) : super(key: key);
+  final String imagePath;
+
+  const ARViewPage({Key? key, required this.imagePath}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,17 +14,19 @@ class ARViewPage extends StatelessWidget {
         title: const Text('AR View'),
       ),
       body: ARKitSceneView(
-        onARKitViewCreated: (controller) => _arView(controller),
+        onARKitViewCreated: (controller) => _arView(controller, imagePath),
       ),
     );
   }
 
-  void _arView(ARKitController controller) {
+  void _arView(ARKitController controller, String imagePath) {
+    final imageTexture = ARKitMaterialProperty.image(imagePath);
+
     final nodeAr = ARKitNode(
       geometry: ARKitSphere(
         materials: [
           ARKitMaterial(
-            diffuse: ARKitMaterialProperty.image('images/image.jpg'),
+            diffuse: imageTexture,
             doubleSided: true,
           ),
         ],
