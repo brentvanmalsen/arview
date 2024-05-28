@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter ARKit Demo',
-      home: const HomePage(),
+    return const MaterialApp(
+      title: 'Flutter ARview',
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -43,8 +43,9 @@ class HomePage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ListTile(
-                    leading: const Icon(Icons.image),
-                    title: const Text('Image 1'),
+                    leading: Image.asset('images/image.jpg',
+                        width: 50, height: 50, fit: BoxFit.cover),
+                    title: const Text('Natuurgebied'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -57,8 +58,9 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   ListTile(
-                    leading: const Icon(Icons.image),
-                    title: const Text('Image 2'),
+                    leading: Image.asset('images/image2.jpg',
+                        width: 50, height: 50, fit: BoxFit.cover),
+                    title: const Text('Groot plein'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -71,8 +73,9 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                   ListTile(
-                    leading: const Icon(Icons.image),
-                    title: const Text('Image 3'),
+                    leading: Image.asset('images/image3.jpg',
+                        width: 50, height: 50, fit: BoxFit.cover),
+                    title: const Text('Rivier uitzicht'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -106,7 +109,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -123,7 +126,7 @@ class HomePage extends StatelessWidget {
             shadowColor: Colors.tealAccent,
             elevation: 10,
           ),
-          child: const Text('Open app gallery'),
+          child: const Text('Open app gallerij'),
         ),
       ),
     );
@@ -145,7 +148,7 @@ class ImagePreviewPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset(imagePath, height: 240, width: 240, fit: BoxFit.cover),
+            Image.asset(imagePath, height: 280, width: 285, fit: BoxFit.cover),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
@@ -169,7 +172,7 @@ class ImagePreviewPage extends StatelessWidget {
                 shadowColor: Colors.tealAccent,
                 elevation: 10,
               ),
-              child: const Text('Use this image in AR'),
+              child: const Text('Gebruik afbeelding in AR'),
             ),
           ],
         ),
