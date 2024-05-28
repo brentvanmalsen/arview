@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'ar.dart';
 
 void main() {
@@ -20,6 +21,20 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  Future<void> _pickImage(BuildContext context) async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ImagePreviewPage(imagePath: pickedFile.path),
+        ),
+      );
+    }
+  }
 
   void _showImageSelectionDialog(BuildContext context) {
     showGeneralDialog(
@@ -112,21 +127,45 @@ class HomePage extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () => _showImageSelectionDialog(context),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.orange,
-            foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-            textStyle:
-                const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () => _showImageSelectionDialog(context),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange,
+                foregroundColor: Colors.white,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textStyle:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                shadowColor: Colors.tealAccent,
+                elevation: 10,
+              ),
+              child: const Text('Open app gallerij'),
             ),
-            shadowColor: Colors.tealAccent,
-            elevation: 10,
-          ),
-          child: const Text('Open app gallerij'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _pickImage(context),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textStyle:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                shadowColor: Colors.tealAccent,
+                elevation: 10,
+              ),
+              child: const Text('Upload afbeelding'),
+            ),
+          ],
         ),
       ),
     );
@@ -142,7 +181,7 @@ class ImagePreviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Image Preview'),
+        title: const Text('Afbeelding weergave'),
       ),
       body: Center(
         child: Column(
