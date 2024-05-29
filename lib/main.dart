@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                   ListTile(
                     leading: Image.asset('images/image.jpg',
                         width: 50, height: 50, fit: BoxFit.cover),
-                    title: const Text('Natuurgebied'),
+                    title: const Text('Nature reserve'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                   ListTile(
                     leading: Image.asset('images/image2.jpg',
                         width: 50, height: 50, fit: BoxFit.cover),
-                    title: const Text('Groot plein'),
+                    title: const Text('Large square'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
                   ListTile(
                     leading: Image.asset('images/image3.jpg',
                         width: 50, height: 50, fit: BoxFit.cover),
-                    title: const Text('Rivier uitzicht'),
+                    title: const Text('River view'),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.push(
@@ -145,7 +145,7 @@ class HomePage extends StatelessWidget {
                 shadowColor: Colors.tealAccent,
                 elevation: 10,
               ),
-              child: const Text('Open app gallerij'),
+              child: const Text('Open app gallery'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -163,7 +163,7 @@ class HomePage extends StatelessWidget {
                 shadowColor: Colors.tealAccent,
                 elevation: 10,
               ),
-              child: const Text('Upload afbeelding'),
+              child: const Text('Upload image'),
             ),
           ],
         ),
@@ -181,7 +181,7 @@ class ImagePreviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Afbeelding weergave'),
+        title: const Text('Image preview'),
       ),
       body: Center(
         child: Column(
@@ -211,7 +211,7 @@ class ImagePreviewPage extends StatelessWidget {
                 shadowColor: Colors.tealAccent,
                 elevation: 10,
               ),
-              child: const Text('Gebruik afbeelding in AR'),
+              child: const Text('Use this image in ARview'),
             ),
           ],
         ),

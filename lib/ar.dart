@@ -12,7 +12,7 @@ class ARViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AR View'),
+        title: const Text('ARview'),
       ),
       body: ARKitSceneView(
         onARKitViewCreated: (controller) => _arView(controller, imagePath),
