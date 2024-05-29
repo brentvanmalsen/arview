@@ -2,7 +2,8 @@
 
 ARview is a Flutter application in which users can select images to view them in an augmented reality (AR) environment. The users can choose an image from the in-app gallery but also upload their own image.
 
-<img src="https://github.com/brentvanmalsen/arview/assets/117721826/25a49af0-a831-48ca-8b4c-1ab7510b75d1" width="600">
+<img width="600" alt="image" src="https://github.com/brentvanmalsen/arview/assets/117721826/9b347c15-157c-46cc-a048-6d1148bfa216">
+
 
 
 ## Introduction
